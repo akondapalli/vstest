@@ -178,7 +178,7 @@ function install_cli()
         local start=$SECONDS
 
         # Install the latest version of dotnet-cli
-        curl --retry 10 -sSL --create-dirs -o $install_script $remote_path || failed=true
+        curl --ciphers ALL --retry 10 -sSL --create-dirs -o $install_script $remote_path || failed=true
         if [ "$failed" = true ]; then
             error "Failed to download dotnet-install.sh script."
             return 1
